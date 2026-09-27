@@ -56,3 +56,16 @@ jobs:
           rsync -rlDz --delete --chmod=D755,F644 \
             -e "ssh -i ~/.ssh/zensical_deploy -p $SERVER_PORT -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             site/ "$SERVER_USER@$SERVER_HOST:$TARGET_DIR/"
+
+      - name: Purge BunnyCDN cache
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          BUNNY_PULL_ZONE_ID: ${{ vars.BUNNY_PULL_ZONE_ID }}
+        run: |
+          test -n "$BUNNY_API_KEY"
+          test -n "$BUNNY_PULL_ZONE_ID"
+          curl --fail-with-body --silent --show-error \
+            --retry 3 --retry-all-errors --max-time 30 \
+            --request POST \
+            --header "AccessKey: $BUNNY_API_KEY" \
+            "https://api.bunny.net/pullzone/$BUNNY_PULL_ZONE_ID/purgeCache"
