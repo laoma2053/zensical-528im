@@ -12,6 +12,13 @@ edit_uri = "edit/main/docs/"
 
 nav = [
   { "首页" = "index.md" },
+  { "网盘拉新" = [
+    { "专题导读" = "netdisk-growth/index.md" },
+    { "商业模型" = "netdisk-growth/business-model.md" },
+    { "内容与搜索" = "netdisk-growth/content-and-search.md" },
+    { "验证与数据" = "netdisk-growth/validation-and-metrics.md" },
+    { "合规与风险" = "netdisk-growth/compliance.md" },
+  ] },
   { "开源" = [
     { "项目" = "open-source/index.md" },
     { "即将推出" = "open-source/upcoming.md" },
