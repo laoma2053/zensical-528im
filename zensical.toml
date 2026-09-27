@@ -12,6 +12,30 @@ edit_uri = "edit/main/docs/"
 
 nav = [
   { "首页" = "index.md" },
+  { "开源" = [
+    { "项目" = "open-source/index.md" },
+    { "即将推出" = "open-source/upcoming.md" },
+    { "路线图" = "open-source/roadmap.md" },
+    { "许可证" = "open-source/license.md" },
+    { "参与贡献" = [
+      { "问题反馈" = "open-source/contributing/issues.md" },
+      { "功能建议" = "open-source/contributing/ideas.md" },
+      { "文档贡献" = "open-source/contributing/documentation.md" },
+      { "安全漏洞" = "open-source/contributing/security.md" },
+      { "拉取请求" = "open-source/contributing/pull-requests.md" },
+    ] },
+    { "社区" = [
+      { "内容提交规范" = "open-source/community/submission-guidelines.md" },
+      { "行为准则" = "open-source/community/code-of-conduct.md" },
+    ] },
+  ] },
+  { "文档" = [
+    { "快速开始" = "guides/index.md" },
+    { "站点配置" = "guides/configuration.md" },
+    { "内容编写" = "guides/writing.md" },
+    { "发布部署" = "guides/deployment.md" },
+  ] },
+  { "关于" = "about.md" },
 ]
 
 # extra_css = ["stylesheets/extra.css"]
@@ -33,7 +57,7 @@ features = [
   "content.tabs.link",
   "content.tooltips",
   # "header.autohide",
-  # "navigation.expand",
+  "navigation.expand",
   "navigation.footer",
   "navigation.indexes",
   "navigation.instant",
@@ -42,12 +66,12 @@ features = [
   "navigation.path",
   # "navigation.prune",
   "navigation.sections",
-  # "navigation.tabs",
-  # "navigation.tabs.sticky",
+  "navigation.tabs",
+  "navigation.tabs.sticky",
   "navigation.top",
   "navigation.tracking",
   "search.highlight",
-  # "toc.follow",
+  "toc.follow",
   # "toc.integrate",
 ]
 
